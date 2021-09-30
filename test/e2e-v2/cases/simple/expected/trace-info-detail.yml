@@ -14,7 +14,7 @@
 # limitations under the License.
 
 spans:
-  {{- range .spans}}
+  {{- contains .spans}}
   - traceid: {{ notEmpty .traceid }}
     segmentid: {{ notEmpty .segmentid }}
     spanid: {{ .spanid }}
@@ -58,15 +58,11 @@ spans:
     iserror: false
     layer: Http
     tags:
-      {{- range .tags }}
-      {{- if eq .key "http.method" }}
+      {{- contains .tags }}
       - key: http.method
         value: POST
-      {{- end }}
-      {{- if eq .key "url" }}
       - key: url
         value: {{ notEmpty .value }}
-      {{- end }}
       {{- end }}
     logs: []
   {{- end }}

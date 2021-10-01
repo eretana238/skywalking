@@ -31,13 +31,11 @@ public class SampleData {
         return name;
     }
 
-    public SampleData setIntValue(int intValue) {
+    public void setIntValue(int intValue) {
         this.intValue = intValue;
-        return this;
     }
 
-    public SampleData setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 }

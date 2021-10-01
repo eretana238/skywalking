@@ -22,7 +22,7 @@ import org.apache.skywalking.oap.server.core.oal.rt.OALDefine;
 /**
  * OAL rules to calculate Event-specific metrics.
  */
-public class EventOALDefine extends OALDefine {
+public final class EventOALDefine extends OALDefine {
     public static final EventOALDefine INSTANCE = new EventOALDefine();
 
     private EventOALDefine() {

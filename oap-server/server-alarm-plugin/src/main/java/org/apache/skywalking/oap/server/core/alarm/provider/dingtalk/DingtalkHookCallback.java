@@ -110,7 +110,7 @@ public class DingtalkHookCallback implements AlarmCallback {
             Long timestamp = System.currentTimeMillis();
             return String.format("%s&timestamp=%s&sign=%s", webHookUrl.getUrl(), timestamp, sign(timestamp, webHookUrl.getSecret()));
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException | InvalidKeyException e) {
-            throw new RuntimeException(e);
+            throw new SignUrlException(e);
         }
     }
 
